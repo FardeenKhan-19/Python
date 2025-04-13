@@ -1,0 +1,1 @@
+This is a sample text file. It contains several words of different lengths, including short and long ones. You can use this file to test the Python program that filters words by their lengths.
