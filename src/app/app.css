@@ -1,0 +1,8 @@
+/* src/app/app.css */
+.app-container {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+  background-color: #f4f7fa; /* A light background for the whole page */
+}
+
+/* You will add styles to sidebar.css and main-dashboard.css later */

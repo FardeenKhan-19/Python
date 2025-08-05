@@ -1,0 +1,29 @@
+<div class="sidebar-header">
+    <h2>Your Trips</h2>
+  </div>
+  
+  <mat-nav-list>
+    <a mat-list-item *ngFor="let trip of trips" [class.active]="trip.id === activeTripId" (click)="onTripSelect(trip)">
+      <div class="trip-item">
+        <div class="trip-info">
+          <span class="trip-name">{{ trip.name }}</span>
+          <span class="trip-status" [ngClass]="trip.status">{{ trip.status }}</span>
+        </div>
+        <div class="trip-details">
+          <span>{{ trip.destinations }}</span>
+          <span>{{ trip.startDate }} - {{ trip.endDate }}</span>
+        </div>
+        <div class="budget-info">
+          <span>Budget Progress</span>
+          <div class="budget-values">
+            <span>{{ formatCurrency(trip.spent) }}</span>
+            <span>{{ formatCurrency(trip.budget) }}</span>
+          </div>
+        </div>
+        <mat-progress-bar
+          mode="determinate"
+          [value]="(trip.spent / trip.budget) * 100">
+        </mat-progress-bar>
+      </div>
+    </a>
+  </mat-nav-list>

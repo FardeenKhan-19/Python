@@ -1,0 +1,33 @@
+/* src/app/components/financial-summary/financial-summary.css */
+.financial-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+  }
+  
+  .label {
+    color: #6c757d;
+  }
+  
+  .value {
+    font-weight: 500;
+    color: #212529;
+  }
+  
+  .estimate {
+    color: #6c757d; /* Lighter color for estimated values */
+  }
+  
+  mat-divider {
+    margin: 8px 0;
+  }
+  
+  .total .label, .total .value {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  .total .value {
+      color: #198754; /* Green for remaining budget */
+  }

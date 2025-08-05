@@ -1,0 +1,101 @@
+/* src/app/layouts/sidebar/sidebar.css */
+:host {
+    display: block;
+    width: 320px;
+    background-color: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: 100%;
+  }
+  
+  .sidebar-header h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    color: #333;
+  }
+  
+  /* Style for each item in the list */
+  :host ::ng-deep .mat-mdc-list-item {
+    height: auto !important;
+    padding: 16px !important;
+    border-radius: 0 !important; /* Added !important for extra force */
+    margin-bottom: 12px;
+    transition: background-color 0.3s ease;
+    border: 1px solid transparent; 
+  }
+  
+  .mat-mdc-list-item:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
+  
+  /* Style for the active/selected trip */
+  .mat-mdc-list-item.active {
+    background-color: #e3f2fd; /* A light blue */
+    border: 1px solid #90caf9;
+  }
+  
+  .trip-item {
+    width: 100%;
+  }
+  
+  .trip-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .trip-name {
+    font-weight: 600;
+    color: #212121;
+  }
+  
+  .trip-status {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  
+  .trip-status.upcoming, .trip-status.planning {
+    background-color: #e0f7fa;
+    color: #00796b;
+  }
+  
+  .trip-status.completed {
+    background-color: #f1f8e9;
+    color: #689f38;
+  }
+  
+  .trip-details {
+    font-size: 0.85rem;
+    color: #757575;
+    margin-bottom: 12px;
+  }
+  .trip-details span {
+    display: block;
+  }
+  
+  
+  .budget-info {
+    font-size: 0.8rem;
+    color: #616161;
+    margin-bottom: 4px;
+  }
+  
+  .budget-values {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+  }
+  
+  /* Style the progress bar */
+  mat-progress-bar {
+    border-radius: 4px;
+    height: 6px !important;
+  }

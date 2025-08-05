@@ -1,0 +1,21 @@
+<mat-card *ngIf="trip">
+    <mat-card-header>
+      <mat-card-title>Trip Timeline</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="timeline-row">
+        <span class="label">Start Date</span>
+        <span class="value">{{ trip.startDate }}</span>
+      </div>
+      <div class="timeline-row">
+        <span class="label">End Date</span>
+        <span class="value">{{ trip.endDate }}</span>
+      </div>
+      <div class="timeline-row">
+        <span class="label">Status</span>
+        <mat-chip-listbox>
+          <mat-chip [ngClass]="trip.status">{{ trip.status }}</mat-chip>
+        </mat-chip-listbox>
+      </div>
+    </mat-card-content>
+  </mat-card>

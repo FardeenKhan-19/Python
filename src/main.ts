@@ -1,9 +1,8 @@
-// src/main.ts
-import { bootstrapApplication } from '@angular/platform-browser';
-import { provideHttpClient } from '@angular/common/http';
-import { AppComponent } from './app/app.component';
-import { appConfig } from './app/app.config'; // Import your app's configuration
+// In file: src/main.ts (REPLACE with this entire block)
 
-// This is the correct way to start a modern standalone Angular application
-bootstrapApplication(AppComponent, appConfig)
-  .catch(err => console.error(err));
+import { bootstrapApplication } from '@angular/platform-browser';
+import { appConfig } from './app/app.config';
+import { AppComponent } from './app/app'; // FIX: Changed 'App' to 'AppComponent'
+
+bootstrapApplication(AppComponent, appConfig) // FIX: Changed 'App' to 'AppComponent'
+  .catch((err) => console.error(err));

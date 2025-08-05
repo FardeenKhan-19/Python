@@ -1,0 +1,37 @@
+/* src/app/layouts/main-dashboard/main-dashboard.css */
+:host {
+  display: block;
+  padding: 24px;
+  flex-grow: 1;
+  background-color: #f4f7fa;
+}
+
+.dashboard-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "stats stats stats"
+    "timeline financial financial"
+    "converter converter financial";
+}
+
+.stats-grid {
+  grid-area: stats;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.timeline-card {
+  grid-area: timeline;
+}
+
+.financial-card {
+  grid-area: financial;
+  grid-row: financial-start / converter-end;
+}
+
+.converter-card {
+  grid-area: converter;
+}

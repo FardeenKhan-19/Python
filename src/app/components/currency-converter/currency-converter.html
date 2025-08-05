@@ -1,0 +1,47 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Currency Converter</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="converterForm" class="converter-grid">
+  
+        <mat-form-field appearance="outline" class="amount-field">
+          <mat-label>Amount</mat-label>
+          <input matInput type="number" formControlName="amount">
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="from-field">
+          <mat-label>From</mat-label>
+          <mat-select formControlName="from">
+            <mat-option *ngFor="let currency of currencies | keyvalue" [value]="currency.key">
+              {{ currency.key }} - {{ currency.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <div class="swap-button-container">
+          <button mat-icon-button (click)="swapCurrencies()">
+            <mat-icon>swap_horiz</mat-icon>
+          </button>
+        </div>
+  
+        <mat-form-field appearance="outline" class="to-field">
+          <mat-label>To</mat-label>
+          <mat-select formControlName="to">
+            <mat-option *ngFor="let currency of currencies | keyvalue" [value]="currency.key">
+              {{ currency.key }} - {{ currency.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
+  
+      <div class="result-container">
+        <mat-progress-spinner *ngIf="isLoading" mode="indeterminate" diameter="30"></mat-progress-spinner>
+        <div *ngIf="!isLoading && convertedAmount !== null">
+          <div class="converted-value">{{ convertedAmount | currency:converterForm.value.to:'symbol':'1.2-2' }}</div>
+          <div class="rate-info" *ngIf="exchangeRate">1 {{ converterForm.value.from }} = {{ exchangeRate | number:'1.4-4' }} {{ converterForm.value.to }}</div>
+        </div>
+      </div>
+  
+    </mat-card-content>
+  </mat-card>

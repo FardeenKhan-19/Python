@@ -1,0 +1,36 @@
+/* src/app/components/currency-converter/currency-converter.css */
+.converter-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    align-items: center;
+  }
+  
+  .swap-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px; /* Align with form fields */
+  }
+  
+  .result-container {
+    margin-top: 24px;
+    padding: 16px;
+    background-color: #e3f2fd;
+    border-radius: 8px;
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .converted-value {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #0d47a1;
+  }
+  
+  .rate-info {
+    font-size: 0.9rem;
+    color: #1565c0;
+  }

@@ -1,0 +1,38 @@
+<div *ngIf="currentTrip as trip" class="dashboard-grid">
+
+  <div class="stats-grid">
+    <app-stat-card
+      title="Duration"
+      [value]="getDuration(trip.startDate, trip.endDate).toString()"
+      comment="days"
+      icon="schedule">
+    </app-stat-card>
+    <app-stat-card
+      title="Budget"
+      [value]="trip.budget | currency:'USD':'symbol':'1.0-0'"
+      [comment]="((trip.spent / trip.budget) | percent:'1.1-1') + ' used'"
+      icon="account_balance_wallet">
+    </app-stat-card>
+    <app-stat-card
+      title="Activities"
+      value="0"
+      comment="planned"
+      icon="checklist">
+    </app-stat-card>
+    <app-stat-card
+      title="Expenses"
+      [value]="trip.spent | currency:'USD':'symbol':'1.0-0'"
+      comment="recorded"
+      icon="receipt_long">
+    </app-stat-card>
+  </div>
+
+  <app-trip-timeline [trip]="trip" class="timeline-card"></app-trip-timeline>
+  <app-financial-summary [trip]="trip" class="financial-card"></app-financial-summary>
+  <app-currency-converter class="converter-card"></app-currency-converter>
+
+</div>
+
+<div *ngIf="!currentTrip">
+  <h2>Please select a trip from the sidebar to view details.</h2>
+</div>

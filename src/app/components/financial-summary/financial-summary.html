@@ -1,0 +1,26 @@
+<mat-card *ngIf="trip">
+    <mat-card-header>
+      <mat-card-title>Financial Summary</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="financial-row">
+        <span class="label">Total Budget</span>
+        <span class="value">{{ trip.budget | currency:'USD':'symbol':'1.0-0' }}</span>
+      </div>
+      <div class="financial-row">
+        <span class="label">Spent</span>
+        <span class="value">{{ trip.spent | currency:'USD':'symbol':'1.0-0' }}</span>
+      </div>
+      <div class="financial-row">
+        <span class="label">Estimated Cost</span>
+        <span class="value estimate">$15.00</span>
+      </div>
+  
+      <mat-divider></mat-divider>
+  
+      <div class="financial-row total">
+        <span class="label">Remaining</span>
+        <span class="value">{{ (trip.budget - trip.spent) | currency:'USD':'symbol':'1.0-0' }}</span>
+      </div>
+    </mat-card-content>
+  </mat-card>

@@ -1,0 +1,37 @@
+/* src/app/components/stat-card/stat-card.css */
+.stat-card {
+  padding: 20px;
+  border: 1px solid #e0e0e0; /* Add a light border */
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 4px;
+}
+
+.value {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #212529;
+  line-height: 1.2;
+}
+
+.comment {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-top: 4px;
+}
+
+.icon-content mat-icon {
+  font-size: 36px;
+  width: 36px;
+  height: 36px;
+  color: #adb5bd;
+}

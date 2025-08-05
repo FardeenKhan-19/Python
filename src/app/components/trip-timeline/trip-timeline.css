@@ -1,0 +1,41 @@
+/* src/app/components/trip-timeline/trip-timeline.css */
+.timeline-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .timeline-row:last-child {
+    border-bottom: none;
+  }
+  
+  .label {
+    color: #6c757d;
+  }
+  
+  .value {
+    font-weight: 500;
+    color: #212529;
+  }
+  
+  .mdc-evolution-chip-set__chips {
+      display: inline-flex !important;
+  }
+  
+  .mat-mdc-chip {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+  }
+  
+  .mat-mdc-chip.upcoming, .mat-mdc-chip.planning {
+      --mdc-chip-label-text-color: #00796b;
+      background-color: #e0f7fa;
+  }
+  
+  .mat-mdc-chip.completed {
+      --mdc-chip-label-text-color: #689f38;
+      background-color: #f1f8e9;
+  }
